@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+<h1>All Users</h1>
+
+<% for(let user of users) {%>
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-md-4 ml-2">
+            <img class="img-fluid ml-2 pl-2 mt-3" src="<%= user.picture.large%>" alt="">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"> <%= `${user.name.first} ${user.name.last}` %> </h5>
+                <p class="card-text"> <%= user.email %> </p>
+                <p class="card-text">
+                    <small class="text-muted"> <%= moment(user.birthday).format("DD/MM/YYYY") %> </small>
+                </p>
+                <a class="btn btn-primary" href="/users/<%= user._id %>"> View <%= user.login.username %> </a>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>

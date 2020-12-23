@@ -1,0 +1,122 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row mb-3">
+        <h1 class="text-center"> Create User</h1>
+        <div class="col-6 offset-3">
+            <form action="/users" class="validated-form" method="POST" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="email">email:</label>
+                    <input class="form-control" type="email" id="email" name="user[emails][]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your email.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="password">password:</label>
+                    <input class="form-control" type="password" id="password" name="user[login][password]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your password.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="firstName">first name:</label>
+                    <input class="form-control" type="text" id="firstName" name="user[name][first]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your first name.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="lastName">last name:</label>
+                    <input class="form-control" type="text" id="lastName" name="user[name][last]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your last name.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="phoneNumber">phone:</label>
+                    <input class="form-control" type="text" id="phoneNumber" name="user[phone]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your phone number.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="username">username:</label>
+                    <input class="form-control" type="text" id="username" name="user[login][username]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your username.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="birthday">birthday:</label>
+                    <input class="form-control" type="date" id="birthday" name="user[birthday]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your birthday date.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="street">street:</label>
+                    <input class="form-control" type="text" id="street" name="user[location][street][name]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your steet name.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="street-number">street number:</label>
+                    <input class="form-control" type="number" min="1" max="1000" id="street-number"
+                        name="user[location][street][number]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your street number.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="city">city:</label>
+                    <input class="form-control" type="text"  id="city"
+                        name="user[location][city]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your city.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="state">state:</label>
+                    <input class="form-control" type="text"  id="state"
+                        name="user[location][state]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your state.
+                    </div>
+                </div>
+                <button class="btn btn-info">Add User</button>
+            </form>
+        </div>
+    </div>

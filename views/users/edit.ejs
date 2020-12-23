@@ -1,0 +1,54 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row mb-3">
+        <h1 class="text-center"> Edit User</h1>
+        <div class="col-6 offset-3">
+            <form action="/users/<%=user._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="firstName">first name:</label>
+                    <input class="form-control" type="text" id="firstName" name="user[name][first]"
+                        value="<%= user.name.first%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your first name.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="lastName">last name:</label>
+                    <input class="form-control" type="text" id="lastName" name="user[name][last]"
+                        value="<%= user.name.last%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your last name.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="phoneNumber">phone:</label>
+                    <input class="form-control" type="text" id="phoneNumber" name="user[phone]" value="<%= user.phone%>"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your phone number.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="username">username:</label>
+                    <input class="form-control" type="text" id="username" name="user[login][username]"
+                        value="<%= user.login.username%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your username.
+                    </div>
+                </div>
+                <button class="btn btn-info">Update User</button>
+            </form>
+            <a href="/users/<%= user._id %>">Back to User</a>
+        </div>
+    </div>
