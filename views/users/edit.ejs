@@ -2,11 +2,31 @@
     <div class="row mb-3">
         <h1 class="text-center"> Edit User</h1>
         <div class="col-6 offset-3">
-            <form action="/users/<%=user._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+            <form action="/users" class="validated-form" method="POST" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="email">email:</label>
+                    <input class="form-control" value="<%= user.emails[0]%>" type="email" id="email" name="user[emails][]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your email.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="password">password:</label>
+                    <input class="form-control" value="<%= user.login.password%>" 
+                    type="password" id="password" name="user[login][password]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your password.
+                    </div>
+                </div>
                 <div class="mb-3">
                     <label class="form-label" for="firstName">first name:</label>
-                    <input class="form-control" type="text" id="firstName" name="user[name][first]"
-                        value="<%= user.name.first%>" required>
+                    <input class="form-control" value="<%= user.name.first%>"  type="text" id="firstName" name="user[name][first]" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
@@ -16,8 +36,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="lastName">last name:</label>
-                    <input class="form-control" type="text" id="lastName" name="user[name][last]"
-                        value="<%= user.name.last%>" required>
+                    <input class="form-control" value="<%= user.name.last%>"  type="text" id="lastName" name="user[name][last]" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
@@ -27,8 +46,8 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="phoneNumber">phone:</label>
-                    <input class="form-control" type="text" id="phoneNumber" name="user[phone]" value="<%= user.phone%>"
-                        required>
+                    <input class="form-control" value="<%= user.phone%>" 
+                     type="text" id="phoneNumber" name="user[phone]" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
@@ -38,8 +57,8 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="username">username:</label>
-                    <input class="form-control" type="text" id="username" name="user[login][username]"
-                        value="<%= user.login.username%>" required>
+                    <input class="form-control"  value="<%= user.login.username%>"
+                     type="text" id="username" name="user[login][username]" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
@@ -47,8 +66,77 @@
                         Please enter your username.
                     </div>
                 </div>
+                <div class="mb-3">
+                    <label class="form-label" for="birthday">birthday:</label>
+                    <input class="form-control" value="<%= moment(user.birthday).format('YYYY-MM-DD');%>" 
+                    type="date" id="birthday" name="user[birthday]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your birthday date.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="street">street:</label>
+                    <input class="form-control" value="<%= user.location.street.name%>" 
+                    type="text" id="street" name="user[location][street][name]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your steet name.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="street-number">street number:</label>
+                    <input class="form-control" value="<%= user.location.street.number%>" type="number" min="1" max="10000" id="street-number"
+                        name="user[location][street][number]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your street number, min value is 1 and max value is 10000
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="city">city:</label>
+                    <input class="form-control" value="<%= user.location.city%>" 
+                        type="text"  id="city"  name="user[location][city]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your city.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="state">state:</label>
+                    <input class="form-control" value="<%= user.location.state%>"
+                    type="text"  id="state"
+                        name="user[location][state]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your state.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="picture">picture SRC:</label>
+                    <input class="form-control" value="<%= user.picture.large%>"
+                    type="text"  id="state"
+                        name="user[picture][large]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your image src.
+                    </div>
+                </div>
                 <button class="btn btn-info">Update User</button>
             </form>
-            <a href="/users/<%= user._id %>">Back to User</a>
         </div>
     </div>
+
+    

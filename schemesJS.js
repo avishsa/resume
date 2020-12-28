@@ -11,7 +11,7 @@ module.exports.userJSScheme = Joi.object({
 
         location: FullJoi.object({
             street: FullJoi.object().keys({
-                number: FullJoi.number().required().min(1).max(1000),
+                number: FullJoi.number().required().min(1).max(10000),
                 name: FullJoi.string().required()
             }).required(),
             city: FullJoi.string().required(),
@@ -29,6 +29,12 @@ module.exports.userJSScheme = Joi.object({
         birthday: FullJoi.date().iso(),
 
         phone: FullJoi.string().required().phoneNumber(),
+        
+        picture: {
+            large: FullJoi.string(),
+            medium: FullJoi.string(),
+            thumbnail: FullJoi.string()
+        },
 
     }).required()
 });
