@@ -80,6 +80,7 @@ app.all('*', (req, res, next) => {
 app.use((err, req, res, next) => {
     console.log(err);
     const { msg = "oh No!", statusCode = 500 } = err;
+    
     res.status(statusCode).render('error', { err });
 
 })
