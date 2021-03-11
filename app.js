@@ -34,8 +34,9 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+const secret = process.env.SECRET || 'notAreallyGoodSecret';
 const sessionCofig = {
-    secret: 'NotAReallyGoodSecret',
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie:{
