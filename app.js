@@ -8,6 +8,7 @@ const ejsMate = require('ejs-mate');
 const session = require('express-session');
 const flash = require('connect-flash');
 
+const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
 const users = require('./routes/users');
 const positions = require('./routes/positions');
@@ -72,9 +73,15 @@ app.get('/www.sce.ac.il', (req, res) => {
 app.get('/www.bgu.ac.il', (req, res) => {
     res.redirect('https://in.bgu.ac.il/Pages/default.aspx');
 })
+app.all('*', (req, res, next) => {
+    console.log("Page not found");
+    next(new ExpressError('Page not found', 404))
+})
 app.use((err, req, res, next) => {
-    const { msg= "oh No!", statusCode = 500} = err;  
+    console.log(err);
+    const { msg = "oh No!", statusCode = 500 } = err;
     res.status(statusCode).render('error', { err });
+
 })
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
