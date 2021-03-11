@@ -1,15 +1,15 @@
 const express = require('express');
 const path = require('path');
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const session = require('express-session');
 const flash = require('connect-flash');
 
 const methodOverride = require('method-override');
-const users = require('./routes/users');
-const positions = require('./routes/positions');
+//const users = require('./routes/users');
+//const positions = require('./routes/positions');
 
-mongoose.connect('mongodb://localhost:27017/resumeDB', {
+/*mongoose.connect('mongodb://localhost:27017/resumeDB', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
@@ -20,7 +20,7 @@ db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
     console.log("Database connected");
 });
-
+*/
 
 const app = express();
 app.engine('ejs', ejsMate);
@@ -53,8 +53,8 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.use('/users',users);
-app.use('/users/:id/positions',positions);
+//app.use('/users',users);
+//app.use('/users/:id/positions',positions);
 
 
 app.get('/skills', (req, res) => {
