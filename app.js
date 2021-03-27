@@ -57,6 +57,7 @@ app.use((req,res,next)=>{
 });
 
 app.get('/', (req, res) => {
+    console.log("Home!!!!!");
     res.render('home');
 });
 
@@ -73,10 +74,10 @@ app.get('/www.sce.ac.il', (req, res) => {
 app.get('/www.bgu.ac.il', (req, res) => {
     res.redirect('https://in.bgu.ac.il/Pages/default.aspx');
 })
-app.all('*', (req, res, next) => {
+/*app.all('*', (req, res, next) => {
     console.log("Page not found");
     next(new ExpressError('Page not found', 404))
-})
+})*/
 app.use((err, req, res, next) => {
     console.log(err);
     const { msg = "oh No!", statusCode = 500 } = err;
