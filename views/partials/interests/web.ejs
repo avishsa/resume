@@ -1,13 +1,35 @@
 <div>
-    <h2>Web development</h2>
-    <div id="stack1">
-        <div> <img src="/images/logos/nodejs.png" height="80px" width="100px"></div>
-        <div> <img src="/images/logos/mongoDB.png" height="50px" width="100px"></div>
-        <div> <img src="/images/logos/html5.png" height="100px" width="100px"></div>
-        <div> <img src="/images/logos/git.png" height="100px" width="100px"></div>
-        <div> <img src="/images/logos/css.png" height="100px" width="100px"></div>
-        <div> <img src="/images/logos/vscode.png" height="100px" width="100px"></div>
+    <h2>Languages</h2>
+    <div id="stack0" class="row">
+        <div class="col-4"> 
+            <%- include('langCard',{lang: { title:"C",content:"My first programming language. I've tutored many students this language. I love the way inwhich using this language, you can get familiar with many elementaric programming concepts and computer architectore "}}); %>
+        </div>
+        <div class="col-4"> 
+            <%- include('langCard',{lang: { title:"Javascript",content:"The same way that C is the core langauge is operating systems, javascript is the core langauge of the web. It is the most recent languge that I've practised extensively"}}); %>
+        </div>
+        <div class="col-4"> 
+            <%- include('langCard',{lang: { title:"python",content:"Re-dived recently, getting to re-familiar with Its full power"}}); %>
+        </div>
         
     </div>
-    <img src="https://ghchart.rshah.org/avishsa"/>
+    <div id="stack1" class="row">
+        <div class="col-4"> 
+            <%- include('techCard',{tech: { image:"/images/logos/nodejs.png", title:"NodeJS",content:"Used NodeJS as server side platform while collaborating with express "}}); %>
+        </div>
+        <div class="col-4"> 
+            <%- include('techCard',{tech: { image:"/images/logos/mongoDB.png", title:"MongoDB",content:"Most recent Database app that I've been using recently at my side projects"}}); %>
+        </div>
+        <div class="col-4">
+            <%- include('techCard',{tech: { image:"/images/logos/git.png", title:"GitHub",content:"I use it to backup my work and enable portability of my projects from different machines."}}); %>
+        </div>
+        <div class="col-4">
+            <%- include('techCard',{tech: { image:"/images/logos/git.png", title:"Heroku",content:"My hosting platform. I choose it becase it's easy to manage and free of charge"}}); %>
+        </div>
+        <div class="col-4"> 
+            <%- include('techCard',{tech: { image:"",title:"react",content:"front-end development, entry level knowledge"}}); %>
+        </div>
+    </div>
+    
+    <%- include('projects')%>
+    <img src="https://ghchart.rshah.org/avishsa" />
 </div>
