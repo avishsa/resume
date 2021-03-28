@@ -1,0 +1,53 @@
+<section class="skills" id="section_contact">
+    <div class="row justify-content-center">
+        <p>Looking for a back-end developer? Want to invite me to a meet-up?
+            Feel free to fill out the form, and I will do my best to answer it shortly
+        </p>
+        <div class="row mb-3">
+            <form action="/sendMsg" class="validated-form" method="POST" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="fullname">Name:</label>
+                    <input class="form-control" type="text" id="fullname" name="Msg[fullname]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your Name.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="email">Email:</label>
+                    <input class="form-control" type="email" id="email" name="Msg[email]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your Email Address.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="subject">Subject:</label>
+                    <input class="form-control" type="text" id="subject" name="Msg[subject]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your Message Subject.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="subject">Message:</label>
+                    <textarea class="form-control" cols="30" rows="13" type="text" id="subject" name="Msg[subject]"
+                        required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your Message Bodt.
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
